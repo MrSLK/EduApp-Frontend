@@ -1,6 +1,9 @@
 {
   "name": "frontend",
-  "version": "14.17.3",
+  "version": "1.0.0",
+  "engines": {
+    "node": "14.17.3"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve --host 0.0.0.0 --port 4309",
