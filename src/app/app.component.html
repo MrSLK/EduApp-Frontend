@@ -57,7 +57,7 @@
                   <li class="dropdown">
                     <!-- <a href="#contact"><i class="fa fa-fw fa-envelope"></i> My Bookings</a> -->
                     <a href="javascript:void(0)" class="dropbtn">
-                      <i class="fa fa-fw fa-calendar"></i> View Bookings</a>
+                      <i class="fa fa-fw fa-calendar"></i>View Bookings</a>
                       <div class="dropdown-content">
                         <a href="/view-bookings" (click)="adminTabs('')">All Bookings</a>
                         <a href="/view-bookings" (click)="adminTabs('pending')">Pending Bookings</a>
@@ -67,15 +67,11 @@
 
                   <li class="dropdown" *ngIf="usertype === 'admin'">
                     <a href="javascript:void(0)" class="dropbtn">
-                      <i class="fa fa-book fa-fw"></i>Subjects</a>
+                      <i class="fa fa-fw fa-book-open"></i>Subjects</a>
                       <div class="dropdown-content">
                         <a routerLink="/admin-add-subject">Add Subjects</a>
                         <a routerLink="/view-subjects">View Subjects</a>
                       </div>
-                  </li>
-                  <li class="dropdown" *ngIf="usertype !== 'admin'">
-                    <a routerLink="/subject" class="dropbtn">
-                      <i class="fa fa-book fa-fw"></i > View Subjects</a>
                   </li>
 
                   <!-- <li *ngIf="usertype !== 'admin'">

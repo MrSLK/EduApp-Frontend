@@ -504,6 +504,8 @@ section {
 .feature-thumb {
   border: 1px solid #f0f0f0;
   padding: 5em 3em;
+  width: 100%;
+  height: 86%;
 }
 
 .feature-thumb span {
@@ -534,6 +536,7 @@ section {
   display: inline-block;
   vertical-align: top;
   margin-left: 15px;
+  margin-top: 10px;
 }
 
 #about figure span {
