@@ -1,0 +1,53 @@
+<body>
+  <div class="section">
+  <div class="container" >
+    <div class="row full-height justify-content-center">
+      <div class="col-12 text-center align-self-center py-5">
+        <div class="section pb-5 pt-5 pt-sm-2 text-center">
+          <h6 class="mb-0 pb-3" style="color: black;"><span>View Profile </span><span>Update Profile</span></h6>
+                <input class="checkbox" type="checkbox" id="reg-log" name="reg-log"/>
+                <label for="reg-log"></label>
+          <div class="card-3d-wrap mx-auto">
+            <div class="card-3d-wrapper">
+              <div class="card-front">
+                <div class="center-wrap" style="color: black;">
+                  <div class="section text-center">
+                    <h4 class="mb-4 pb-3">Profile</h4>
+                    <div class="incard" *ngIf="status">
+                      <p class="card-text">Full Name : {{this.user_details.full_names}}</p>
+                      <p class="card-text">Phone : {{this.user_details.phone}}</p>
+                      <p class="card-text">Email : {{this.user_details.username}}</p>
+
+                       </div>
+                      </div>
+                    </div>
+                  </div>
+              <div class="card-back">
+                <div class="center-wrap">
+                  <div class="section text-center">
+                    <form [formGroup]="myForm" (ngSubmit)="submit()" ngNativeValidate style="color: rgba(0, 0, 0, 0.479);">
+                      <div class="form-outline mb-4">
+                          <label class="form-label">Existing Full Name : {{this.user_details.full_names}}</label>
+                          <input type="text" formControlName="name" id="full_name" class="form-control" />
+                        </div>
+                      <div class="form-outline mb-4">
+                          <label class="form-label">Existing Phone : {{this.user_details.phone}}</label>
+                          <input type="text" formControlName="phone" id="cellphone" class="form-control" />
+                        </div>
+                      <div class="form-outline mb-4">
+                          <label class="form-label">Existing Email : {{this.user_details.username}}</label>
+                          <input type="email" formControlName="email" id="email" class="form-control" />
+                        </div>
+                        <button type="submit" class="btn btn-success my-4">Update profile</button>
+                  </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+</body>

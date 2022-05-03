@@ -1,0 +1,219 @@
+<div class="row">
+    <h2 *ngIf="usertype == 'teacher' || usertype =='learner'"><strong>My Bookings</strong></h2>
+    <h2 *ngIf="usertype == 'admin'"><strong>All Bookings</strong></h2>
+    
+    <div class="col">
+          <div class="table-responsive" *ngIf="usertype !== 'admin' && selector ==''">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">{{bookee_name}} Name</th>
+                    <th scope="col">Topic</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Duration (In Hours)</th>
+                    <th scope="col">Booking Status</th>
+                    <th *ngIf="usertype == 'teacher'" scope="col">Action</th>
+                    <!-- <th *ngIf="usertype == 'teacher'" scope="col">Enter Session</th> -->
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let book of bookingRes; index as i">
+                    <th scope="row">{{i + 1}}</th>
+                    <td>{{book.full_name}}</td>
+                    <td>{{book.topic}}</td>
+                    <td>{{book.date}}</td>
+                    <td>{{book.duration}}</td>
+                    <td>{{book.status}}</td>
+                    <td>
+                        <button *ngIf="usertype == 'teacher' && book.status !== 'approved'" type="submit" (click)="updateStatus(book, 'approved')" class="btn btn-primary btn-sm mx-2 my-3">Approve</button>
+                        <button *ngIf="usertype == 'teacher' && book.status !== 'approved'" type="submit" (click)="updateStatus(book, 'declined')" class="btn btn-danger btn-sm mx-2 my-3">Decline</button>
+                    </td>
+                    <td *ngIf="book.status == 'approved'">
+                      <button class="btn btn-primary btn-sm mx-2 my-3" (click)="goToChats(book)">Enter Session</button>
+                    </td>
+                  </tr>
+
+                  <tr>
+                </tbody>
+              </table>
+          </div>
+
+          <div class="table-responsive" *ngIf="usertype !== 'admin' && selector =='approved'">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">{{bookee_name}} Name</th>
+                    <th scope="col">Topic</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Duration (In Hours)</th>
+                    <th scope="col">Booking Status</th>
+                    <th *ngIf="usertype == 'teacher'" scope="col">Action</th>
+                    <!-- <th *ngIf="usertype == 'teacher'" scope="col">Enter Session</th> -->
+                  </tr>
+                </thead>
+                <tbody *ngFor="let book of bookingRes; index as i">
+                  <tr *ngIf="book.status == 'approved'">
+                    <th scope="row">{{i + 1}}</th>
+                    <td>{{book.full_name}}</td>
+                    <td>{{book.topic}}</td>
+                    <td>{{book.date}}</td>
+                    <td>{{book.duration}}</td>
+                    <td>{{book.status}}</td>
+                    <td>
+                        <button *ngIf="usertype == 'teacher' && book.status !== 'approved'" type="submit" (click)="updateStatus(book, 'approved')" class="btn btn-primary btn-sm mx-2 my-3">Approve</button>
+                        <button *ngIf="usertype == 'teacher' && book.status !== 'approved'" type="submit" (click)="updateStatus(book, 'declined')" class="btn btn-danger btn-sm mx-2 my-3">Decline</button>
+                    </td>
+                    <td *ngIf="book.status == 'approved'">
+                      <button class="btn btn-primary btn-sm mx-2 my-3" (click)="goToChats(book)">Enter Session</button>
+                    </td>
+                  </tr>
+
+                  <tr>
+                </tbody>
+              </table>
+          </div>
+
+          <div class="table-responsive" *ngIf="usertype !== 'admin' && selector =='pending'">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">{{bookee_name}} Name</th>
+                    <th scope="col">Topic</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Duration (In Hours)</th>
+                    <th scope="col">Booking Status</th>
+                    <th *ngIf="usertype == 'teacher'" scope="col">Action</th>
+                    <!-- <th *ngIf="usertype == 'teacher'" scope="col">Enter Session</th> -->
+                  </tr>
+                </thead>
+                <tbody *ngFor="let book of bookingRes; index as i">
+                  <tr *ngIf="book.status == 'pending'">
+                    <th scope="row">{{i + 1}}</th>
+                    <td>{{book.full_name}}</td>
+                    <td>{{book.topic}}</td>
+                    <td>{{book.date}}</td>
+                    <td>{{book.duration}}</td>
+                    <td>{{book.status}}</td>
+                    <td>
+                        <button *ngIf="usertype == 'teacher' && book.status !== 'approved'" type="submit" (click)="updateStatus(book, 'approved')" class="btn btn-primary btn-sm mx-2 my-3">Approve</button>
+                        <button *ngIf="usertype == 'teacher' && book.status !== 'approved'" type="submit" (click)="updateStatus(book, 'declined')" class="btn btn-danger btn-sm mx-2 my-3">Decline</button>
+                    </td>
+                    <td *ngIf="book.status == 'approved'">
+                      <button class="btn btn-primary btn-sm mx-2 my-3" (click)="goToChats(book)">Enter Session</button>
+                    </td>
+                  </tr>
+
+                  <tr>
+                </tbody>
+              </table>
+          </div>
+
+          <div class="table-responsive" *ngIf="usertype === 'admin' && selector ==''">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">{{bookee_name}} Name</th>
+                    <th scope="col">Topic</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Duration (In Hours)</th>
+                    <th scope="col">Booking Status</th>
+                    <th *ngIf="usertype == 'teacher'" scope="col">Action</th>
+                    <!-- <th *ngIf="usertype == 'teacher'" scope="col">Enter Session</th> -->
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let book of admin_bookings; index as i">
+                    <th scope="row">{{i + 1}}</th>
+                    <td>{{book.full_name}}</td>
+                    <td>{{book.topic}}</td>
+                    <td>{{book.date}}</td>
+                    <td>{{book.duration}}</td>
+                    <td>{{book.status}}</td>
+                    <td>
+                        <button *ngIf="usertype == 'teacher' && book.status !== 'approved'" type="submit" (click)="updateStatus(book, 'approved')" class="btn btn-primary btn-sm mx-2 my-3">Approve</button>
+                        <button *ngIf="usertype == 'teacher' && book.status !== 'approved'" type="submit" (click)="updateStatus(book, 'declined')" class="btn btn-danger btn-sm mx-2 my-3">Decline</button>
+                    </td>
+                    <td *ngIf="book.status == 'approved'">
+                      <button class="btn btn-primary btn-sm mx-2 my-3" (click)="goToChats(book)">Enter Session</button>
+                    </td>
+                  </tr>
+
+                  <tr>
+                </tbody>
+              </table>
+          </div>
+
+          <div class="table-responsive" *ngIf="usertype === 'admin' && selector =='approved'">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">{{bookee_name}} Name</th>
+                    <th scope="col">Topic</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Duration (In Hours)</th>
+                    <th scope="col">Booking Status</th>
+                  </tr>
+                </thead>
+                <tbody *ngFor="let book of admin_bookings; index as i">
+                  <tr *ngIf="book.status == 'approved'">
+                    <th scope="row">{{i + 1}}</th>
+                    <td>{{book.full_name}}</td>
+                    <td>{{book.topic}}</td>
+                    <td>{{book.date}}</td>
+                    <td>{{book.duration}}</td>
+                    <td>{{book.status}}</td>
+                    <td>
+                        <button *ngIf="usertype == 'teacher' && book.status !== 'approved'" type="submit" (click)="updateStatus(book, 'approved')" class="btn btn-primary btn-sm mx-2 my-3">Approve</button>
+                        <button *ngIf="usertype == 'teacher' && book.status !== 'approved'" type="submit" (click)="updateStatus(book, 'declined')" class="btn btn-danger btn-sm mx-2 my-3">Decline</button>
+                    </td>
+                    <td *ngIf="book.status == 'approved'">
+                      <button class="btn btn-primary btn-sm mx-2 my-3" (click)="goToChats(book)">Enter Session</button>
+                    </td>
+                  </tr>
+
+                  <tr>
+                </tbody>
+              </table>
+          </div>
+
+          <div class="table-responsive" *ngIf="usertype === 'admin' && selector =='pending'">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">{{bookee_name}} Name</th>
+                    <th scope="col">Topic</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Duration (In Hours)</th>
+                    <th scope="col">Booking Status</th>
+                  </tr>
+                </thead>
+                <tbody *ngFor="let book of admin_bookings; index as i">
+                  <tr *ngIf="book.status == 'pending'">
+                    <th scope="row">{{i + 1}}</th>
+                    <td>{{book.full_name}}</td>
+                    <td>{{book.topic}}</td>
+                    <td>{{book.date}}</td>
+                    <td>{{book.duration}}</td>
+                    <td>{{book.status}}</td>
+                    <td>
+                        <button *ngIf="usertype == 'teacher' && book.status !== 'approved'" type="submit" (click)="updateStatus(book, 'approved')" class="btn btn-primary btn-sm mx-2 my-3">Approve</button>
+                        <button *ngIf="usertype == 'teacher' && book.status !== 'approved'" type="submit" (click)="updateStatus(book, 'declined')" class="btn btn-danger btn-sm mx-2 my-3">Decline</button>
+                    </td>
+                    <td *ngIf="book.status == 'approved'">
+                      <button class="btn btn-primary btn-sm mx-2 my-3" (click)="goToChats(book)">Enter Session</button>
+                    </td>
+                  </tr>
+
+                  <tr>
+                </tbody>
+              </table>
+          </div>
+
+    </div>
+  </div>

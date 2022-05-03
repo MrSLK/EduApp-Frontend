@@ -1,0 +1,65 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered" >
+                    <thead>
+                      <tr>
+                        <th scope="col">User name</th>
+                        <th scope="col">Cell Phone Number</th>
+                        <th scope="col">Date Registered</th>
+                        <th scope="col">User Email</th>
+                        <th scope="col">Usertype</th>
+                        <th scope="col">User Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">{{full_name}}</th>
+                        <td>{{cellno}}</td>
+                        <td>{{created_at | date}}</td>
+                        <td>{{email}}</td>
+                        <td>{{usertype}}</td>
+                        <td  *ngIf="status; else diactive">Active</td>
+                      </tr>
+                    </tbody>
+                  </table>
+              </div>
+
+            <form [formGroup]="form">
+                <div class="form-group col-12">
+                    <label>Choose your Role </label>
+                    <select formControlName="user_status" class="form-control" placeholder="Select Role">
+                        <option value="" disabled selected hidden>Change User Status</option>
+                        <option value="true">Activate User</option>
+                        <option value="false">Deactivate User</option>
+                    </select>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <h3>Qualifications</h3>
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Qualification Description</th>
+                <th scope="col">Qualification</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- <tr  *ngFor="let qualification of qualifications">
+                <td>{{qualification.description}}</td>
+                <td  (click)="download(qualification.qualification)">{{qualification.name}}</td>
+              </tr> -->
+            </tbody>
+          </table>
+      </div>
+    </div>
+<ng-template #diactive>
+
+    <h3>User Status: Not Active</h3>
+</ng-template>
+
+<button class="btn btn-primary" (click)="checkFormValue()">check value</button>

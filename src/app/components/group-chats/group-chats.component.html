@@ -1,0 +1,64 @@
+<div class="body">
+    <div class="container my-2">
+      <div class="page-inner no-page-title">
+        <!-- start page main wrapper -->
+        <div id="main-wrapper">
+            <div class="row">
+              <div class="col-md-6">
+                <form [formGroup]="myForm" (ngSubmit)="submit()" ngNativeValidate>
+                  <h1><strong>Topic: {{topic}}</strong></h1>
+                    <h2><strong>Questions:</strong></h2>
+                    <div class="card">
+                      
+                      
+                      <ul class="list-group list-group-flush my-1" *ngFor="let post of posts; index as i">
+                        <span class="border border-1 w-100">
+                          <li class="list-group-item" 
+                        [class.active]="i == currentIndex"
+                        (click)="setActivePost(post, i)" 
+                        routerLink="/reply">{{post.post}}</li>
+                      </span></ul>
+                     
+                    </div>
+                    <div class="col container">
+                      <div class="row">
+                        <div class="col">
+                          <label>Enter Your Question Here</label>
+                        <textarea   
+                            class="form-control" 
+                            formControlName="message" 
+                            id="exampleFormControlTextarea1" 
+                            rows="3">
+                        </textarea>
+                        </div>
+                      </div>
+                      <br>
+                      <div class="row mySendBtnDiv">
+                        <button class="btn btn-outline-success mySendBtn" type="submit" >Send</button>
+                      </div>
+                    </div>
+                    <div>
+                    </div>
+                </form>
+              </div>
+              <div class="col">
+                <h2><strong>Other Topics</strong></h2>
+                <div class="card my-6">
+                <ul class="list-group list-group-flush" *ngFor="let post of topics; index as i">
+                    <li class="list-group-item">
+                      {{post.topic}}</li>
+                </ul>
+                </div>
+              </div>
+              
+            </div>
+          <!-- Row -->
+        </div>
+  <!-- end page main wrapper -->
+    </div>
+</div>
+  </div>
+
+
+
+

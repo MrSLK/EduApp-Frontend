@@ -1,0 +1,40 @@
+<div class="container-fluid" style="width: 70vw">
+    <div class="column  ">
+        <div class="row">
+          <!-- <h3>Welcome, {{myName}}</h3> -->
+          <div class="container d-flex">
+            <div class="col-sm-12">
+          <div class="card w-60">
+            <div class="card-body ">
+              <h5 class="card-title">System Subjects</h5>
+                <form [formGroup]="myForm">
+                    <div class="form-group form-check my-2">
+                        <ul class="list-group">
+                          <li
+                            class="list-group-item"
+                            *ngFor="let data of allSubject; let i = index"
+                            [class.active]="i == currentIndex"
+                            (click)="setActiveSubject(data, i)"
+                            routerLink="/admin-view-subject"
+                          >
+                            {{ data.name }}
+                          </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <button class="btn btn-warning mx-2" 
+                        routerLink="/admin-add-subject" 
+                        type="submit" >Add A Subject</button>
+                    </div>
+                </form>
+
+            </div>
+           
+            </div>
+           </div>
+          </div>
+        </div>
+    </div>
+</div>
+<br><br>

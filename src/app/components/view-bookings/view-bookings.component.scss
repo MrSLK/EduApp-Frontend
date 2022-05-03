@@ -1,0 +1,13 @@
+.table-striped>tbody>tr:nth-child(odd)>td, 
+.table-striped>tbody>tr:nth-child(odd)>th {
+   background-color:rgb(251, 252, 253); // Choose your own color here
+ }
+
+.header {background-color: #2c85b4;}
+
+table, thead,tbody {
+    border: 0.1px solid;
+  }
+  .approve{
+      margin-right: 1rem;
+  }

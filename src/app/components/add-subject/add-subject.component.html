@@ -1,0 +1,93 @@
+ <section id="why-us" class="why-us section-bg">
+  <div class="container-fluid" data-aos="fade-up">
+
+    <div class="row">
+
+      <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
+
+        <div class="content">
+          <h3>Follow these simple instructions and <strong> start interacting with other users</strong></h3>
+          <p> Simple clicks gets you going. </p>
+        </div>
+
+        <div class="accordion-list">
+          <ul>
+            <li>
+              <a data-bs-toggle="collapse" class="collapse" data-bs-target="#accordion-list-1"><span>01</span>Assign Subjects<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="accordion-list-1" class="collapse show" data-bs-parent=".accordion-list">
+                
+                <p>Add a subject that you are struggling with in order to access the forum where all teachers and other learners post and answer questions
+                </p>
+
+                  <div class="portlet light bordered">
+                      
+                      <div class="portlet-body">
+                          <table class="table">
+                              <thead>
+                                  <tr>
+                                      <th>Subject Name</th>
+                                      <th>Add Subject</th>
+                                      
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                  <tr style="height: 20px;" class="active" *ngFor="let data of allSubjects; let i=index">
+                                    <td> 
+                                      <div class="d-flex justify-content-between" (click)="assignSubject(data.id)" style="border-radius: 5%;color: blue;">
+                                      <a>{{data.name}}</a>
+                                     </div>
+                                    </td>
+                                    <td (click)="assignSubject(data.id)" style="border-radius: 5%;color: blue;cursor: pointer;">+</td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+
+              </div>
+            </li>
+
+            <li>
+              <a data-bs-toggle="collapse" data-bs-target="#accordion-list-2" class="collapsed"><span>02</span> Access or Remove your subjects <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="accordion-list-2" class="collapse" data-bs-parent=".accordion-list">
+                <p>Access a subject's forum by clicking on the subject name and start learning. </p>
+
+                <div class="portlet light bordered">
+                      
+                  <div class="portlet-body">
+                      <table class="table">
+                          <thead>
+                              <tr>
+                                  <th>My Subjects</th> 
+                              </tr>
+                          </thead>
+                          <tbody>  
+                              <tr style="height: 20px;" class="active" *ngFor="let subjects of mySubjects; let i=index">
+                                <td> 
+                                  <a class="list-group-item" style="width:100%" 
+                                        [class.active]="i == currentIndex" 
+                                        (click)="setActiveTopic(subjects, i)"
+                                        routerLink="/topics">{{subjects.name}}</a>
+                                </td>
+                                <td (click)="removeMySubject(subjects.id)" class="fa fa-trash-o"
+                                    style="font-size:15px;color:rgb(145, 66, 66);cursor: pointer;">
+                                </td>
+                              </tr>
+
+                          </tbody>
+                      </table>
+                  </div>
+              </div>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img" style='background-image: url("assets/learnerCss/section2/img/why-us.png");' data-aos="zoom-in" data-aos-delay="150">&nbsp;</div>
+    </div>
+
+  </div>
+</section>

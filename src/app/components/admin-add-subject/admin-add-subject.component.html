@@ -1,0 +1,34 @@
+<br>
+<div class="container ">
+  <div class="content">
+
+    <form [formGroup]="myForm" (ngSubmit)="submit()" ngNativeValidate>
+      <div class="card" style="background-color: rgb(205, 255, 240);">
+
+      <div class="add-subject d-block justify-content-center col-md-12 my-2" style="margin-left: 1%;">
+        <div class="input-fields col-sm-12">
+          <h1 style="text-align: center;">Add  Subject</h1>
+
+          <div class="form-group">
+
+           
+            <label for="usr">Subject Name:</label>
+            <input type="text" formControlName="subject_name" class="form-control" placeholder="Enter subject name">
+          </div>
+          <div class="form-group">
+            <label for="pwd">Subject Description:</label>
+            <input input type="text" formControlName="subject_description" class="form-control"
+              placeholder="Enter subject description">
+          </div>
+        </div>
+        </div>
+
+      </div>
+
+      <div class="button d-block justify-content-center col-md-12 my-2 " style="margin-left: 34%;">
+        <button class="btn btn-outline-warning" type="reset" style="margin:5px">Reset Form</button>
+        <button class="btn btn-outline-success" type="submit">Submit Form</button>
+      </div>
+    </form>
+  </div>
+</div>

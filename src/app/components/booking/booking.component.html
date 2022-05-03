@@ -1,0 +1,108 @@
+<!-- <body>
+  <section class="vh-100 gradient-custom">
+  <div class="container py-5 h-100">
+    <div class="row justify-content-center align-items-center h-100">
+      <div class="col-12 col-lg-9 col-xl-7">
+        <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+          <div class="card-body p-4 p-md-5">
+
+            <form [formGroup]="myForm" (ngSubmit)="submit()">
+                           <h2 class="card-title" style="text-align:center;">  Teacher name</h2>
+   
+                           <div class="card-body">
+                               <div class="form-group">
+   
+                                   <div class="Booking">
+                                       <label for="booking_day">Available Booking Day</label>
+                                    
+                                           <div class="input-group">
+                                               <input class="form-control " min="" formControlName="date" type="date"  placeholder="dd/mm/yyyy" >
+                                                Date.now()
+
+                                             </div>                                  
+                                       
+                                     </div>  
+                                     <div class="form-group">
+                                       <label for="exampleFormControlInput1">Session Time </label>
+                                       <input type="time" class="form-control" formControlName="time" id="time">
+                                     </div>
+                                     <div class="form-group">
+                                       <label for="exampleFormControlInput1">Session Duration (In hours)</label>
+                                       <input type="number" class="form-control" formControlName="duration"  id="FormControlInput1">
+                                     </div>
+                                     <div class="form-group">
+                                       <label for="exampleFormControlTextarea1">Topic</label>
+                                       <textarea class="form-control" formControlName="topic" id="FormControlTextarea1" rows="3"></textarea>
+                                     </div>
+                                     <button type="reset" class="btn btn-primary " style="margin: 10px;"  >Cancel</button>
+                                     
+                                     <button type="submit" class="btn btn-success">Book Session</button>
+   
+   
+                           </div>
+                         </div>
+           
+   
+                    </form>
+  </div>
+</div>
+</div>
+</div>
+</div>
+
+</section>
+</body> --> 
+
+<body>
+<section id="hero" class="d-flex align-items-center">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
+        <form [formGroup]="myForm" (ngSubmit)="submit()">
+          <h2 class="card-title" style="text-align:center;"> Make Your Bookings </h2>
+
+          <div class="card-body">
+              <div class="form-group">
+
+                  <div class="Booking">
+                      <label for="booking_day">Available Booking Day</label>
+                   
+                          <div class="input-group">
+                              <input class="form-control " min="" formControlName="date" type="date"  placeholder="dd/mm/yyyy" >
+
+                            </div>                                  
+                      
+                    </div>  
+                    <div class="form-group">
+                      <label for="exampleFormControlInput1">Session Time </label>
+                      <input type="time" class="form-control" formControlName="time" id="time">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlInput1">Session Duration (In hours)</label>
+                      <input type="number" class="form-control" formControlName="duration"  id="FormControlInput1">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlTextarea1">Topic</label>
+                      <textarea class="form-control" formControlName="topic" id="FormControlTextarea1" rows="3"></textarea>
+                    </div>
+                    <button type="reset" class="btn btn-primary " style="margin: 10px;"  >Cancel</button>
+                    
+                    <button type="submit" class="btn btn-success">Book Session</button>
+
+
+          </div>
+        </div>
+
+
+   </form>
+      </div>
+      <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left" data-aos-delay="200">
+        <img src="assets/learnerCss/img/counts-img.svg" class="img-fluid animated" alt="">
+      </div>
+    </div>
+  </div>
+
+</section>
+</body>
+

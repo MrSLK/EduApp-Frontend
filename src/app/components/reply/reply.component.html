@@ -1,0 +1,87 @@
+<!-- <div class="body">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-6">
+                <h1>Question: {{header}}</h1>
+                        <h2>Answers</h2>
+                  
+                    <div class="card my-3" style="width: 40rem;">
+                        <ul class="list-group list-group-flush" *ngFor="let reply of replies; index as i">
+                            <li class="list-group-item" 
+                            >{{reply.replies}}</li>
+                        </ul>
+                    </div>
+                    <form [formGroup]="myForm" (ngSubmit)="submit()" ngNativeValidate>
+                        <div class="col-md-6 mb-4">
+                            <input type="text" class="form-control"  formControlName="message" placeholder="Answer here....." />
+                        </div>
+                        <div class="buttons">
+                            <button class="btn btn-outline-success ms-5" type="submit" >Send</button>
+                        </div>
+                    </form>
+              </div>
+        </div>
+    </div>
+</div> -->
+
+<div class="body">
+    <div class="container my-2">
+      <div class="page-inner no-page-title">
+        <!-- start page main wrapper -->
+        <div id="main-wrapper">
+            <div class="row">
+              <div class="col-md-6">
+                <form [formGroup]="myForm" (ngSubmit)="submit()" ngNativeValidate>
+                  <h1><strong>Question: {{header}}</strong></h1>
+                    <h2><strong>Answers:</strong></h2>
+                    <div class="card">
+                      
+                      
+                        <ul class="list-group list-group-flush" *ngFor="let reply of replies; index as i">
+                            <li class="list-group-item" 
+                            >{{reply.replies}}</li>
+                        </ul>
+                     
+                    </div>
+                    <div class="col container">
+                      <div class="row">
+                        <div class="col">
+                          <label>Enter Your Answer Here</label>
+                        <textarea   
+                            class="form-control" 
+                            formControlName="message" 
+                            id="exampleFormControlTextarea1" 
+                            rows="3">
+                        </textarea>
+                        </div>
+                      </div>
+                      <br>
+                      <div class="row mySendBtnDiv">
+                        <button class="btn btn-outline-success mySendBtn" type="submit" >Send</button>
+                      </div>
+                    </div>
+                    <div>
+                    </div>
+                </form>
+              </div>
+              <div class="col">
+                <h2><strong>Other Topics</strong></h2>
+                <div class="card my-6">
+                <ul class="list-group list-group-flush" *ngFor="let post of other_questions; index as i">
+                    <li class="list-group-item">
+                      {{post.post}}</li>
+                </ul>
+                </div>
+              </div>
+              
+            </div>
+          <!-- Row -->
+        </div>
+  <!-- end page main wrapper -->
+    </div>
+</div>
+  </div>
+
+
+
+

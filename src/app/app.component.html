@@ -1,0 +1,105 @@
+
+<!-- PRE LOADER -->
+<section class="preloader">
+  <div class="spinner">
+       <span class="spinner-rotate"></span>
+       
+   </div>
+</section>
+<div class="div" >
+  <app-navbar></app-navbar>
+</div>
+ 
+<div style="height: 90%;">
+  <div class="container-fluid">
+    <div class="col">
+      <br>
+      <div class="row">
+        <div class="justify-content-center">
+          <div id="sidebar-nav">
+            <div class="container mt-5 justify-content-center">
+              <div class="d-flex justify-content-between">
+                <h3 style="color: rgb(250, 242, 241);">Edu-inc-App</h3>
+                <div class="menu">
+                  <i type="menu" class="fa fa-arrow-left fa-2x" (click)="Open($event)"></i>
+                </div>
+              </div>
+              
+              <div class="container mt-2">
+                <ul id="list" style="font-size: 15px;">
+                  <!-- <li>
+                    <a href="#home"><i class="fa fa-fw fa-home"></i> Home</a>
+                  </li> -->
+                  <li>
+                    <a *ngIf="isLoggedIn" role="link" (click)="dashboardLocation()" type="button"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                  </li>
+
+                  <li class="dropdown" *ngIf="usertype === 'admin'">
+                    <a class="dropbtn">
+                      <i class="fa fa-fw fa-user"></i> Users</a>
+                    <div class="dropdown-content">
+                      <a href="/admin-landing" (click)="adminTabs('')">All Users</a>
+                      <a href="/admin-landing" (click)="adminTabs('teacher')">All Teachers</a>
+                      <a href="/admin-landing" (click)="adminTabs('learner')">All Learners</a>
+                      <a href="/admin-landing" (click)="adminTabs('false')">Suspended Users</a>
+                    </div>
+                  </li>
+                  <li *ngIf="usertype != 'admin'">
+                    <a href="/profile"><i class="fa fa-fw fa-user"></i> My Profile</a>
+                  </li>
+
+                  <li>
+                    <a href="/upload-documents" *ngIf="isLoggedIn && usertype === 'teacher'"
+                     role="button" type="button">
+                      <i class="fa fa-fw fa-file"></i> Upload Qualification</a>
+                  </li>
+
+                  <li class="dropdown">
+                    <!-- <a href="#contact"><i class="fa fa-fw fa-envelope"></i> My Bookings</a> -->
+                    <a href="javascript:void(0)" class="dropbtn">
+                      <i class="fa fa-fw fa-calendar"></i> View Bookings</a>
+                      <div class="dropdown-content">
+                        <a href="/view-bookings" (click)="adminTabs('')">All Bookings</a>
+                        <a href="/view-bookings" (click)="adminTabs('pending')">Pending Bookings</a>
+                        <a href="/view-bookings" (click)="adminTabs('approved')">Confirmed Bookings</a>
+                      </div>
+                  </li>
+
+                  <li class="dropdown" *ngIf="usertype === 'admin'">
+                    <a href="javascript:void(0)" class="dropbtn">
+                      <i class="fa fa-book fa-fw"></i>Subjects</a>
+                      <div class="dropdown-content">
+                        <a routerLink="/admin-add-subject">Add Subjects</a>
+                        <a routerLink="/view-subjects">View Subjects</a>
+                      </div>
+                  </li>
+                  <li class="dropdown" *ngIf="usertype !== 'admin'">
+                    <a routerLink="/subject" class="dropbtn">
+                      <i class="fa fa-book fa-fw"></i > View Subjects</a>
+                  </li>
+
+                  <!-- <li *ngIf="usertype !== 'admin'">
+                    <a><i class="fa fa-fw fa-phone"></i>Edu Contacts</a>
+                  </li> -->
+
+                </ul>
+                <br>
+
+                <a href="#sign-in" class="fs-6" style="font-size: 13px;" *ngIf="!isLoggedIn"><i class="fa fa-fw fa-sign-in"></i> login</a>
+                <a href="#sign-out" class="fs-6" style="font-size: 13px;" (click)="clearOut()" *ngIf="isLoggedIn"><i class="fa fa-fw fa-power-off"></i> logout</a>
+              </div>
+            </div>
+          </div>
+
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+  
+    </div>  
+  </div>
+</div>
+
+
+<!-- <div class="footer" *ngIf="!isLoggedIn === false">
+  <app-footer></app-footer>
+</div> -->
