@@ -27,6 +27,7 @@ import { GroupChatsComponent } from './components/group-chats/group-chats.compon
 import { TopicsComponent } from './components/topics/topics.component';
 import { BookingComponent } from './components/booking/booking.component';
 import { ViewBookingsComponent } from './components/view-bookings/view-bookings.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { ViewBookingsComponent } from './components/view-bookings/view-bookings.
     TopicsComponent,
     BookingComponent,
     ViewBookingsComponent,
+    ForgotPasswordComponent,
   ],
   imports: [
     BrowserModule,

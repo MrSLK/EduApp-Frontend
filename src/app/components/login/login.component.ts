@@ -60,12 +60,6 @@ export class LoginComponent implements OnInit {
       this.myRes = res;
       this.userType = this.myRes.usertype;
       console.log(this.myRes)
-
-
-     
-
-    
-
       
       Swal.fire({
         icon: 'success',

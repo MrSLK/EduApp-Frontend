@@ -71,7 +71,11 @@ export class RegisterComponent implements OnInit {
         console.log(res)
         alert("Successfully registered")
         sessionStorage.setItem("user_details", JSON.stringify(res))
-        window.location.href ="/home";
+        if(userType === "teacher"){
+          window.location.href = '/upload-documents'
+        }else{
+          window.location.href = '/learner-landing'
+        }
       }, err => {
         this.errMessage = err;
         console.log(this.errMessage.error )

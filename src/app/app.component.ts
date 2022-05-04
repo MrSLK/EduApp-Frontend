@@ -97,4 +97,10 @@ export class AppComponent implements OnInit {
         }
         })
     }
+
+    openPassword(response : string) : void {
+      console.log(response);
+      sessionStorage.setItem("login_status", JSON.stringify(response))
+      window.location.href = '/forgot-password'
+    }
 }

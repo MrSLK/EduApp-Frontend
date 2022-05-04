@@ -18,7 +18,7 @@ import { GroupChatsComponent } from './components/group-chats/group-chats.compon
 import { TopicsComponent } from './components/topics/topics.component';
 import { BookingComponent } from './components/booking/booking.component';
 import { ViewBookingsComponent } from './components/view-bookings/view-bookings.component';
-import { PasswordComponent } from './password/password.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 
 const routes: Routes = [
   {path: '', component: HomepageComponent ,pathMatch: 'full' },
@@ -39,7 +39,7 @@ const routes: Routes = [
   {path: 'group-discussion', component: GroupChatsComponent},
   {path: 'topics', component: TopicsComponent},
   {path: 'booking', component: BookingComponent}, 
-  {path: 'Forgot-Password', component: PasswordComponent},
+  {path: 'forgot-password', component: ForgotPasswordComponent},
   {path: 'view-bookings', component: ViewBookingsComponent},
   {path: 'subject', component: AddSubjectComponent},
   {path: '', component: HomepageComponent}

@@ -37,4 +37,12 @@ export class UserService {
   saveMyDocs(object : {}) {
     return this.http.post(`${baseURL}myDocs`, object);
   }
+
+  forgotPassword(object : {}){
+    return this.http.post(`${baseURL}forgot-password`, object);
+  }
+
+  updatePassword(object : {}) {
+    return this.http.post(`${baseURL}update-password`, object);
+  }
 }

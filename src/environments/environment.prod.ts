@@ -25,7 +25,7 @@ const socketEndpoint = 'https://edu-incpg.herokuapp.com/';
 // const chats = 'http://localhost:4320/chats/';
 
 export const environment = {
-  production: false,
+  production: true,
   baseUrl : `${BaseUrl}`,
   assignSubject : `${assignedSubject}`,
   subject : `${Subject}`,
