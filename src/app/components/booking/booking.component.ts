@@ -43,7 +43,7 @@ export class BookingComponent implements OnInit {
       duration: new FormControl(),
       topic: new FormControl()
   });
-
+  // this.submit();
   }
 
   submit() : void{
@@ -61,6 +61,8 @@ export class BookingComponent implements OnInit {
 
     this.bookingService.book(object).subscribe(data => {
       this.resMessage = data;
+
+    
 
       Swal.fire({
         icon: 'success',

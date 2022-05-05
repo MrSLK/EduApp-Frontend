@@ -39,6 +39,7 @@
                     <option value="" disabled selected hidden>Select Role</option>
                     <option value="teacher">Teacher</option>
                     <option value="learner">Learner</option>
+                    <option value="admin">Admin</option>
                 </select>
                 <div *ngIf="submitted && f['userType'].errors" class="invalid-feedback">
                     <div *ngIf="f['userType'].errors['required']">User type is required</div>

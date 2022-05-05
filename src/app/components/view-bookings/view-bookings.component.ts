@@ -143,6 +143,7 @@ export class ViewBookingsComponent implements OnInit {
     if(this.usertype == 'admin'){
       this.bookingService.getAllBookings().subscribe(data => {
         this.admin_bookings = data;
+        // console.log("Bookings");
         console.log(this.admin_bookings)
       }, err => {
         // console.log(err)
