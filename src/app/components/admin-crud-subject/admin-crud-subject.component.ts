@@ -50,7 +50,7 @@ export class AdminCrudSubjectComponent implements OnInit {
         text: `successfully deleted ${this.name}`,
         title: 'delete'
       })
-      window.location.href = "/admin-landing";
+      window.location.href = "/view-subjects";
     }, err => {
       Swal.fire({
         icon: 'error',
@@ -100,7 +100,7 @@ export class AdminCrudSubjectComponent implements OnInit {
         text: `successfully updated ${this.name}`,
         title: 'Update'
       })
-      window.location.href = "/admin-landing";
+      window.location.href = "/view-subjects";
     }, err => {
       Swal.fire({
         icon: 'error',

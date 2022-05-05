@@ -48,7 +48,7 @@ export class AdminAddSubjectComponent implements OnInit {
           title: 'Subject added'
         })
 
-        window.location.href = "/admin-landing"
+        window.location.href = "/view-subjects"
       }, err => {
         Swal.fire({
           icon: 'error',
