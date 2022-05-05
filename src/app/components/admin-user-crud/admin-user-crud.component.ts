@@ -3,6 +3,7 @@ import { User } from '../../models/user.model'
 import { AuthService } from 'src/app/Services/auth.service';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
+import { UserService } from 'src/app/Services/user.service';
 
 @Component({
   selector: 'app-admin-user-crud',
@@ -11,7 +12,7 @@ import Swal from 'sweetalert2';
 })
 export class AdminUserCrudComponent implements OnInit {
 
-  constructor(private formBuilder: FormBuilder, private authService: AuthService) { }
+  constructor(private formBuilder: FormBuilder, private authService: AuthService, private userService: UserService) { }
 
   form!: FormGroup;
   oneUser!: User;
@@ -24,6 +25,7 @@ export class AdminUserCrudComponent implements OnInit {
   updated_at!: any;
   usertype!: any;
   resMessage!: any;
+  qualifications!: any;
 
   ngOnInit(): void {
 
@@ -42,7 +44,8 @@ export class AdminUserCrudComponent implements OnInit {
     this.updated_at = this.oneUser.updated_at;
     this.usertype = this.oneUser.usertype;
 
-    
+    this.getQualification()
+
   }
 
 
@@ -65,10 +68,28 @@ export class AdminUserCrudComponent implements OnInit {
         title: 'User updated',
         text: `${this.resMessage}`
       })
-      window.location.href = '/view-users'
+      window.location.href = '/admin-landing'
     }, err => {
       console.log("Didn't update user status")
     })
+  }
+
+  getQualification() : void {
+    // getMyDocs
+    let object = {
+      teacher_id : this.id
+    }
+    this.userService.getMyDocs(object).subscribe(data => {
+      this.qualifications = data
+      console.log(this.qualifications)
+    }, err => {
+      console.log("Didn't' get qualifications")
+    })
+  }
+
+  seeDoc() : void {
+    console.log(this.qualifications[0].qualification)
+    window.open(`${this.qualifications[0].qualification}`)
   }
 
 }

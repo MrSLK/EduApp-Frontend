@@ -38,6 +38,10 @@ export class UserService {
     return this.http.post(`${baseURL}myDocs`, object);
   }
 
+  getMyDocs(object : {}) {
+    return this.http.post(`${baseURL}get-docs`, object)
+  }
+
   forgotPassword(object : {}){
     return this.http.post(`${baseURL}forgot-password`, object);
   }

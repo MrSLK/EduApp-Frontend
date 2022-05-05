@@ -69,13 +69,20 @@ export class RegisterComponent implements OnInit {
       this.userService.signup(user, userType).subscribe(res => {
         this.response = res;
         console.log(res)
-        alert("Successfully registered")
         sessionStorage.setItem("user_details", JSON.stringify(res))
-        if(userType === "teacher"){
-          window.location.href = '/upload-documents'
-        }else{
-          window.location.href = '/learner-landing'
-        }
+        Swal.fire({
+          icon: 'success',
+          title: 'Registration Succes',
+          text: "Registration Sucessfull. Let's start working"
+        }).catch((SweetAlertResult) => {
+          if(SweetAlertResult){
+            if(userType == 'teacher'){
+              window.location.href = '/upload-document'
+            } else if(userType == 'learner'){
+              window.location.href = '/learner-landing'
+            }
+          }
+        })
       }, err => {
         this.errMessage = err;
         console.log(this.errMessage.error )

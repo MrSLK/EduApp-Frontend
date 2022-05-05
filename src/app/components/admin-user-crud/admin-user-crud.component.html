@@ -49,14 +49,15 @@
               </tr>
             </thead>
             <tbody>
-              <!-- <tr  *ngFor="let qualification of qualifications">
-                <td>{{qualification.description}}</td>
-                <td  (click)="download(qualification.qualification)">{{qualification.name}}</td>
-              </tr> -->
+              <tr  *ngFor="let qualification of qualifications">
+                <td >{{qualification.description}}</td>
+                <td (click)="seeDoc()">{{qualification.name}}</td>
+              </tr>
             </tbody>
           </table>
       </div>
     </div>
+
 <ng-template #diactive>
 
     <h3>User Status: Not Active</h3>
