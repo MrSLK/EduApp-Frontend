@@ -62,9 +62,35 @@ export class AdminCrudSubjectComponent implements OnInit {
   updateSubject(id: number) : void {
     let subId = id;
     let object = {
-      name: this.myForm.value.subject_name,
-      description: this.myForm.value.subject_description
+      name: null,
+      description: null
     }
+
+    if(this.myForm.value.subject_name === null && this.myForm.value.subject_description !== null)
+    {
+      object = {
+        name: this.name,
+        description: this.myForm.value.subject_description
+      }
+    }
+    else if(this.myForm.value.subject_description === null && this.myForm.value.subject_name !== null)
+    {
+      object = {
+        name: this.myForm.value.subject_name,
+        description: this.description
+      }
+    }
+    else{
+      object = {
+        name: this.myForm.value.subject_name,
+        description: this.myForm.value.subject_description
+      }
+    }
+
+    // let object = {
+    //   name: this.myForm.value.subject_name,
+    //   description: this.myForm.value.subject_description
+    // }
 
     console.log(object)
     this.subjectService.updateSubject(object, subId).subscribe(res =>{
