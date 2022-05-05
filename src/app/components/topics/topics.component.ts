@@ -30,6 +30,8 @@ export class TopicsComponent implements OnInit {
   latest_topic!: any;
   resultLearner: any = '';
   resultTeacher: any = '';
+  currentTeacher!: any;
+  currentTeachderIndex!: any;
   
 
   constructor(private route:ActivatedRoute,
@@ -99,8 +101,20 @@ export class TopicsComponent implements OnInit {
     console.log(this.currentTopic);
   }
 
+  setActiveTeacher(teacher : any, index : number){
+    this.currentTeacher = teacher;
+    this.currentTeachderIndex = index;
+
+    this.subjectService.setOneSubject(this.currentTeacher);
+
+    console.log(this.currentTeacher);
+
+    sessionStorage.setItem('teacher_details', JSON.stringify(this.currentTeacher));
+
+    window.location.href = '/booking'
+  }
+
   submitTopic() : void {
-    console.log()
     let topic = {
       sender_id: this.myId,
       topic: this.myForm.value.topic,
