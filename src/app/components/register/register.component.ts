@@ -18,6 +18,9 @@ export class RegisterComponent implements OnInit {
   response!: any;
   errMessage: any;
 
+  
+  
+
   constructor(private formBuilder: FormBuilder, private userService : UserService ,private currentPath:RoutersService) { }
 
   ngOnInit() {

@@ -102,11 +102,11 @@ export class AddSubjectComponent implements OnInit {
           
         }).then((SweetAlertResult) => {
           if(SweetAlertResult.value == true) {
-            // window.location.href = `/${this.usertype}-landing`;
-            console.log(`/${this.usertype}-landing`);
+
+          window.location.href = `/subject`;
             
-            this.router.navigate([`/`]);
-            this.routerF();
+            // this.router.navigate([`/`]);
+            // this.routerF();
           }
         });    
       }  
@@ -121,7 +121,7 @@ export class AddSubjectComponent implements OnInit {
     this.router.navigate([`/`]);
 
     return await setTimeout(() => {
-      this.router.navigate([`/${this.usertype}-landing`]);},0,1
+      this.router.navigate([`/subject`]);},0,1
       )
   
   }
@@ -156,7 +156,7 @@ export class AddSubjectComponent implements OnInit {
 
   }).then((SweetAlertResult) => {
     if(SweetAlertResult.value == true) {
-      window.location.href = `/${this.usertype}-landing`;
+      window.location.href = `/subject`;
     }
   })
     }, err => {
