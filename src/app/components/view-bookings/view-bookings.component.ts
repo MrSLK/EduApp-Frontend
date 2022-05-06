@@ -64,7 +64,7 @@ export class ViewBookingsComponent implements OnInit {
     this.bookingService.getBooking(object).subscribe(data => {
       this.bookingRes = data;
       this.booking_id = this.bookingRes.id
-      // console.log(this.bookingRes)
+      console.log(this.bookingRes)
       if(this.bookingRes.rowCount == 0){
         Swal.fire({
           icon: 'warning',

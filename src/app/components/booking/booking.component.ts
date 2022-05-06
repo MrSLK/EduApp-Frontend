@@ -52,6 +52,7 @@ export class BookingComponent implements OnInit {
     let object = {
         topic: this.myForm.value.topic,
         date: this.myForm.value.date,
+        time: this.myForm.value.time,
         duration: this.myForm.value.duration,
         teacher_id: this.teacher_details.user_id,
         learner_id: this.user_id,
@@ -61,9 +62,7 @@ export class BookingComponent implements OnInit {
 
     this.bookingService.book(object).subscribe(data => {
       this.resMessage = data;
-
-    
-
+      console.log(this.resMessage)
       Swal.fire({
         icon: 'success',
         title: 'Booking Success',
@@ -86,14 +85,13 @@ export class BookingComponent implements OnInit {
 
   }
 
-  async  routerF(){
+    async routerF(){
     
-    this.router.navigate([`/`]);
+      this.router.navigate([`/`]);
 
-    return await setTimeout(() => {
-      this.router.navigate([`/view-bookings`]);},0,1
-      )
-  
-  }
+      return await setTimeout(() => {
+        this.router.navigate([`/view-bookings`]);},0,1
+        )
+    }
 
 }
