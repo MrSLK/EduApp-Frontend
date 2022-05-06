@@ -77,7 +77,7 @@ export class RegisterComponent implements OnInit {
         }).catch((SweetAlertResult) => {
           if(SweetAlertResult){
             if(userType == 'teacher'){
-              window.location.href = '/upload-document'
+              window.location.href = '/upload-documents'
             } else if(userType == 'learner'){
               window.location.href = '/learner-landing'
             }

@@ -74,8 +74,8 @@ export class ForgotPasswordComponent implements OnInit {
     console.log()
 
     let object = {
-      newPassword: this.user_details.id,
-      id: this.form.value.new_password
+      newPassword: this.form.value.new_password,
+      id: this.user_details.id
     }
 
     this.userService.updatePassword(object).subscribe(res => {

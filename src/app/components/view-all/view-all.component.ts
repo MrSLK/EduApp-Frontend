@@ -24,6 +24,7 @@ export class ViewAllComponent implements OnInit {
 
   ngOnInit(): void {
     // Gets user name
+    this.getUsers == '';
     this.user_details = sessionStorage.getItem('user_details');
     this.user_details = JSON.parse(this.user_details);
     this.myName = this.user_details.full_names;
