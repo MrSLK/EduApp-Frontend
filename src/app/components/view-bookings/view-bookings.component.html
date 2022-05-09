@@ -3,7 +3,7 @@
     <h2 *ngIf="usertype == 'admin'"><strong>All Bookings</strong></h2>
     
     <div class="col">
-          <div class="table-responsive" *ngIf="usertype !== 'admin' && selector ==''">
+          <div class="table-responsive" *ngIf="usertype !== 'admin' && selector =='all'">
             <table class="table">
                 <thead>
                   <tr>
@@ -117,7 +117,7 @@
               </table>
           </div>
 
-          <div class="table-responsive" *ngIf="usertype === 'admin' && selector ==''">
+          <div class="table-responsive" *ngIf="usertype === 'admin' && selector =='all'">
             <table class="table">
                 <thead>
                   <tr>

@@ -4,11 +4,11 @@
         <button class="btn btn-primary mx-2" (click)="getusers('teacher')">Get All Teachers</button> 
         <button class="btn btn-primary mx-2" (click)="getusers('learner')">Get All Learners</button> <button class="btn btn-primary mx-2" routerLink="/view-bookings">View Bookings</button>
     </div> -->
-<h3 *ngIf="getUsers === ''"><strong>All Users</strong></h3>
+<h3 *ngIf="getUsers === 'all'"><strong>All Users</strong></h3>
 <h3 *ngIf="getUsers === 'teacher'"><strong>All Teachers</strong></h3>
 <h3 *ngIf="getUsers === 'learner'"><strong>All Learners</strong></h3>
 <div class="table-responsive">
-    <table class="table table-striped table-hover" *ngIf="getUsers === ''">
+    <table class="table table-striped table-hover" *ngIf="getUsers === 'all'">
         <thead>
           <tr>
             <th scope="col">id</th>

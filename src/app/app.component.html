@@ -38,7 +38,7 @@
                     <a class="dropbtn">
                       <i class="fa fa-fw fa-user"></i> Users</a>
                     <div class="dropdown-content">
-                      <a href="/admin-landing" (click)="adminTabs('')">All Users</a>
+                      <a href="/admin-landing" (click)="adminTabs('all')">All Users</a>
                       <a href="/admin-landing" (click)="adminTabs('teacher')">All Teachers</a>
                       <a href="/admin-landing" (click)="adminTabs('learner')">All Learners</a>
                       <a href="/admin-landing" (click)="adminTabs('false')">Suspended Users</a>
@@ -59,7 +59,7 @@
                     <a href="javascript:void(0)" class="dropbtn">
                       <i class="fa fa-fw fa-calendar"></i> View Bookings</a>
                       <div class="dropdown-content">
-                        <a href="/view-bookings" (click)="adminTabs('')">All Bookings</a>
+                        <a href="/view-bookings" (click)="adminTabs('all')">All Bookings</a>
                         <a href="/view-bookings" (click)="adminTabs('pending')">Pending Bookings</a>
                         <a href="/view-bookings" (click)="adminTabs('approved')">Confirmed Bookings</a>
                       </div>
